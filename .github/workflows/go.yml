@@ -14,11 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Test Go Code
+    - name: Setup Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.20'
-        
+        go-version: '1.21'
     - name: Test
       run: |
         go mod tidy
