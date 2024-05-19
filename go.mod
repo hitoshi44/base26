@@ -1,6 +1,6 @@
 module github.com/hitoshi44/base26
 
-go 1.21.4
+go 1.21
 
 require (
 	github.com/jason-meredith/warships v0.1.0-alpha
