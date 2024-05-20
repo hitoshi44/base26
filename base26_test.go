@@ -47,6 +47,18 @@ func TestDecodeUint(t *testing.T) {
 	}
 }
 
+func TestDecodeUintWithPaddingA(t *testing.T) {
+	// padding with 'a'
+	for _, tt := range uintTests {
+		t.Run(tt.name, func(t *testing.T) {
+			padding := "aaaaaaaaaaaaaa"[0:14-len(tt.s)] + tt.s
+			got, err := DecodeUint(padding)
+			assert.Nil(t, err)
+			assert.Equal(t, tt.u, got)
+		})
+	}
+}
+
 func TestDecodeUintError(t *testing.T) {
 	var err error
 	// too big for uint64
